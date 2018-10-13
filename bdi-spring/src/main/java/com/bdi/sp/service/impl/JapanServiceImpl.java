@@ -22,5 +22,17 @@ public class JapanServiceImpl implements JapanService {
 	public Japan selectJapan(int jpnum) {
 		return jdao.selectJapan(jpnum);
 	}
+	@Override
+	public int insertJapan(Japan jp) {
+		return jdao.insertJapan(jp);
+	}
+	@Override
+	public int updateJapan(Japan jp) {
+		return jdao.updateJapan(jp);
+	}
+	@Override
+	public int deleteJapan(Japan jp) {
+		return jdao.deleteJapan(jp);
+	}
 
 }

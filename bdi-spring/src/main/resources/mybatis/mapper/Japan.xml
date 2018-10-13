@@ -15,4 +15,23 @@
     select * from japan
     where jpnum=#{jpnum}
   </select>
+  
+  <insert id="insertJapan">
+  	insert into japan(jpname, jpdesc)
+  	values(#{jpname},#{jpdesc})
+  </insert>
+  
+  <update id="updateJapan" parameterType="com.bdi.sp.vo.Japan">
+  	update japan
+  	<set>
+  		<if test="jpname!=null">jpname=#{jpname},</if>
+  		<if test="jpdesc!=null">jpdesc=#{jpdesc},</if>
+  	</set>
+  	where jpnum=#{jpnum}
+  </update>
+  
+  <delete id="deleteJapan" parameterType="com.bdi.sp.vo.Japan">
+  	delete FROM japan
+  	 where jpnum=#{jpnum}
+  </delete>
 </mapper>
