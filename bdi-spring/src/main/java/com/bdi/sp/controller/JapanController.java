@@ -25,15 +25,13 @@ public class JapanController {
 	private JapanService js;
 	
 	@RequestMapping (value="/japans", method=RequestMethod.GET)
-		public String getJapanList(Japan jp, Model model){
-			model.addAttribute("jList", js.selectJapanList(jp));
-			return "japan/list";
+		public @ResponseBody List<Japan> getJapanList(@ModelAttribute Japan j){
+			return js.selectJapanList(null);
 		}
 	
 	@RequestMapping (value="/japans/{jpnum}", method=RequestMethod.GET)
-	public String getJapanOne(@PathVariable int jpnum, Model model){
-		model.addAttribute("j", js.selectJapan(jpnum));
-		return "japan/view";
+	public @ResponseBody Japan getJapanOne(@PathVariable Integer jpnum){
+		return js.selectJapan(jpnum);
 	}
 	
 	@RequestMapping (value="/japans/{jpnum}", method=RequestMethod.POST)

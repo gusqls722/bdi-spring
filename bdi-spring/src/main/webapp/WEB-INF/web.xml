@@ -39,4 +39,12 @@
 		<filter-name>encodingFilter</filter-name>
 		<url-pattern>/</url-pattern>
 	</filter-mapping>
+	
+	<jsp-config>
+		<jsp-property-group>
+			<url-pattern>*.jsp</url-pattern>
+			<include-prelude>/WEB-INF/views/common/head.jspf</include-prelude>
+			<include-coda>/WEB-INF/views/common/bottom.jspf</include-coda>
+		</jsp-property-group>
+	</jsp-config>
 </web-app>
