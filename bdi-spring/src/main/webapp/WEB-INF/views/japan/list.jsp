@@ -20,11 +20,10 @@
 		jpGrid.setColTypes('ro,ed,ed');				// ed=read only
 		jpGrid.setColSorting('int,str,str');		// int 정렬 str정렬
 		jpGrid.init();
-		var data = [{jpnum:1,jpname:"test",jpdesc:"test data"}
-		,{jpnum:2,jpname:"admin",jpdesc:"admin data"}
-		,{jpnum:3,jpname:"user",jpdesc:"user data"}
-		];
-		jpGrid.parse(data,'js');
+		au.send({url:'/japans',success:function(res){
+			res= JSON.parse(res);
+			jpGrid.parse(res,'js');
+		}})
 	})
 </script>
 <body>

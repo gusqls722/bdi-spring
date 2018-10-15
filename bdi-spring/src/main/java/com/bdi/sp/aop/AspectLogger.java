@@ -32,6 +32,7 @@ public class AspectLogger {
 		logger.debug("{}.{}({})",new Object[] {sigName, tarName, params});
 		Object obj = null;
 		obj = pjp.proceed();
+		logger.debug("@Result=>{}",obj);
 		logger.debug("@Around end => {}", pjp);
 		return obj;
 	}
