@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bdi.sp.DepartManager">
+  <select id="selectDepartList" resultType="com.bdi.sp.vo.Depart">
+    select dino as id, di.* from depart_info di
+    <where>
+    	<if test="diNo!=null"> and dino=#{dino}</if>
+    	<if test="diname!=null"> and diname=#{diname}</if>
+    	<if test="didesc!=null"> and didesc=#{didesc}</if>
+    	<if test="dicnt!=null"> and dicnt=#{dicnt}</if>
+    </where>
+ </select>
+</mapper>
